@@ -25,7 +25,12 @@ public class Pruebas {
 
 				System.out.printf("El camión con mátricula %s tiene una carga acutal"
 						+ " de %f kg %n", camion.getMatricula(), camion.getCargaActual() );
-				;		
+				;	
+				
+				System.out.println("cargo una caja de 100 kg");
+				camion.cargarCaja(100);
+			
+				
 
 
 				
