@@ -22,9 +22,11 @@ public class Account {
 	public boolean withdraw(double amt){	      
 
 		boolean result = false;
-		if ( amt <= balance ) {
+		if ( balance >= amt ) {
 		balance = balance - amt;
 		result = true;
+		} else {
+			System.out.println("No puede sacar una cantidad mayor al saldo actual");
 		}
 		return result;
         
