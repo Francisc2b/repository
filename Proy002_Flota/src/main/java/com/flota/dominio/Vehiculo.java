@@ -13,10 +13,10 @@ public class Vehiculo {
 	
 	//public final double CARGA_MAXIMA_POR_DEFECTO = 5222.78;
 
-	public Vehiculo() {
-		super();
-		// TODO Auto-generated constructor stub
-	}	
+//	public Vehiculo() {
+//		super();
+//		// TODO Auto-generated constructor stub
+//	}	
 
 	public Vehiculo(double cargaMaxima, String matricula) {
 		//validar matricula no null
@@ -44,13 +44,20 @@ public class Vehiculo {
 	}
 	
 	public void cargarCaja(double peso) {
-		if(peso > 0 && (peso + cargaActual <= cargaMaxima)) {
-			//puedo cargar
-			this.cargaActual += peso;
-			this.numCajas ++;
-		}else {
-			throw new RuntimeException("no caben mas cajas");
+		if (peso <= 0) {
+			throw new RuntimeException("La caja debe pesar algo");
+		}		
+		
+		if(peso + cargaActual <= cargaMaxima) {			
+			throw new RuntimeException("no caben mas cajas");		
 		}
+		this.cargaActual +=peso;
+		this.numCajas ++;
+	}
+	
+	public void cargarCaja (Caja c) {
+		cargarCaja(c.getPeso());
+		
 	}
 
 	public double getCargaActual() {
@@ -60,6 +67,15 @@ public class Vehiculo {
 	public int getNumCajas() {
 		return numCajas;
 	}
+
+	public String getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+	}
 	
 
+	
 }
