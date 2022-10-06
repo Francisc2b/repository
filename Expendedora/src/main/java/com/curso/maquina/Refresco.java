@@ -4,33 +4,23 @@ import java.util.Objects;
 
 public class Refresco {
 	
-	private int id;
+	
 	private String sabor;
 	private int cl;
 	private int precio;
 	private int stock;
-	
-	
 	
 	public Refresco() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Refresco(int id, String sabor, int cl, int precio, int stock) {
-		this.id = id;
+	public Refresco(String sabor, int cl, int precio, int stock) {
+		super();
 		this.sabor = sabor;
 		this.cl = cl;
 		this.precio = precio;
 		this.stock = stock;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getSabor() {
@@ -49,7 +39,7 @@ public class Refresco {
 		this.cl = cl;
 	}
 
-	public double getPrecio() {
+	public int getPrecio() {
 		return precio;
 	}
 
@@ -64,10 +54,26 @@ public class Refresco {
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
+	
+	public boolean sinStock() {
+		return this.stock == 0;
+	}
+	
+	public boolean vender() {
+		boolean stck = false;
+		if (!this.sinStock()) {
+			stck = true;
+		}
+		return stck;
+	}
+	
+	public void reponer(int numero) {
+		this.stock += numero;
+	}	
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(cl, id, precio, sabor, stock);
+		return Objects.hash(cl, precio, sabor, stock);
 	}
 
 	@Override
@@ -79,17 +85,12 @@ public class Refresco {
 		if (getClass() != obj.getClass())
 			return false;
 		Refresco other = (Refresco) obj;
-		return cl == other.cl && id == other.id
-				&& Double.doubleToLongBits(precio) == Double.doubleToLongBits(other.precio)
-				&& Objects.equals(sabor, other.sabor) && stock == other.stock;
+		return cl == other.cl && precio == other.precio && Objects.equals(sabor, other.sabor) && stock == other.stock;
 	}
 
 	@Override
 	public String toString() {
-		return "Refresco [id=" + id + ", sabor=" + sabor + ", cl=" + cl + ", precio=" + precio + ", stock=" + stock
-				+ "]";
+		return "Refresco [sabor=" + sabor + ", cl=" + cl + ", precio=" + precio + ", stock=" + stock + "]";
 	}
 	
-	
-
 }
