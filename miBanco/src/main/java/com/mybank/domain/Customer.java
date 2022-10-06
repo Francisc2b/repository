@@ -10,6 +10,13 @@ public class Customer {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
+	}	
+
+	public Customer(String firstName, String lastName, Account account) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.account = account;
 	}
 
 	public String getFirstName() {
@@ -34,6 +41,11 @@ public class Customer {
 
 	public void setAccount(Account account) {
 		this.account = account;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [firstName=" + firstName + ", lastName=" + lastName + ", account=" + account + "]";
 	}  
     
     
