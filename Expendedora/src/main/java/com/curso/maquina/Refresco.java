@@ -7,8 +7,7 @@ public class Refresco {
 	private int id;
 	private String sabor;
 	private int cl;
-	private double precio;
-	//private String agotado;
+	private int precio;
 	private int stock;
 	
 	
@@ -18,7 +17,7 @@ public class Refresco {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Refresco(int id, String sabor, int cl, double precio, int stock) {
+	public Refresco(int id, String sabor, int cl, int precio, int stock) {
 		this.id = id;
 		this.sabor = sabor;
 		this.cl = cl;
@@ -54,7 +53,7 @@ public class Refresco {
 		return precio;
 	}
 
-	public void setPrecio(double precio) {
+	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
 
