@@ -116,6 +116,11 @@ public class TresEnRayaTest {
 		}		
 	}
 	
+	@Test
+	public void cuandoJugadorHaceLineaHorizontalGana() {
+		
+	}
+	
 
 
 }
