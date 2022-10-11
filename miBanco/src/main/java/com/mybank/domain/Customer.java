@@ -8,6 +8,8 @@ public class Customer {
     private String lastName;
     private Account account;
     
+    
+    
 	public Customer(String firstName, String lastName) {
 		super();
 		this.firstName = firstName;
@@ -44,8 +46,6 @@ public class Customer {
 	public void setAccount(Account account) {
 		this.account = account;
 	}
-	
-	
 
 	@Override
 	public int hashCode() {

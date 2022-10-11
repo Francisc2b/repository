@@ -2,11 +2,11 @@ package com.mybank.domain;
 
 public class Account {
 
-    private double balance;
+    protected double balance;
+    protected SavingsAccount saving;
 
-	public Account(double initBalance) {
-		super();
-		this.balance = initBalance;
+	protected Account(double initBalance) {
+		balance = initBalance;
 	}
 
 	public double getBalance() {
@@ -19,16 +19,20 @@ public class Account {
 		return true;
     }
 	
-	public boolean withdraw(double amt){	      
+	
+	
+	public SavingsAccount getSaving() {
+		return saving;
+	}
 
-		boolean result = false;
-		if ( balance >= amt ) {
-		balance = balance - amt;
-		result = true;
-		} else {
-			System.out.println("No puede sacar una cantidad mayor al saldo actual");
-		}
-		return result;
+	public boolean withdraw(double amt){	
+		
+		 boolean result = false; 
+	        if ( amt <= balance ) {
+	            balance = balance - amt;
+	            result = true;
+	        }
+	        return result;
         
    }
    

@@ -1,9 +1,6 @@
 package com.mybank.domain;
 
 public class Bank {
-	
-
-	
 	private  Customer[] customers;
 	private  int numberOfCustomers;
 	
@@ -39,6 +36,19 @@ public class Bank {
 		int i = numberOfCustomers++;
 		customers[i] = new Customer(firstName, lastName);
 	}
+
+	public int getNumberOfCustomers() {
+		return numberOfCustomers;
+	}
+	
+
+    public Customer getCustomer(int i) {
+        return customers[i];
+    }
+	
+	
+
+
 	
 
 }
