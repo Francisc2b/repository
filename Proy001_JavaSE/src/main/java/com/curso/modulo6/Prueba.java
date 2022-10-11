@@ -27,18 +27,16 @@ public class Prueba {
 		Director d1 = new Director();
 		d1.setNombre("Juan");
 		d1.setSalario(20000);
-		d1.setDepartamento("Direccion provinicial");
+		d1.setDepartamento("Direccion provincial");
 		d1.setVehiculoEmpresa(2);
 		
 		Gerente d2 = new Gerente();
 		d2.setNombre("Ana");
 		d2.setSalario(30000);
 		d2.setDepartamento("Direccion Autonomica");
-		//d2.setVehiculoEmpresa(5);
-		((Director) d2).setVehiculoEmpresa(2);
-
-		//System.out.println(d1.getDetails());
-		System.out.println(d2.getDetails());
+		//Director d3 = ((Director) d2);
+		//d3.setVehiculoEmpresa(1);
+		System.out.println(d1.getDetails());
 	
 	}
 

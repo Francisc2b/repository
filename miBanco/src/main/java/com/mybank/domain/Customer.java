@@ -1,5 +1,7 @@
 package com.mybank.domain;
 
+import java.util.Objects;
+
 public class Customer {
 	
 	private String firstName ;
@@ -41,6 +43,26 @@ public class Customer {
 
 	public void setAccount(Account account) {
 		this.account = account;
+	}
+	
+	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(account, firstName, lastName);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer other = (Customer) obj;
+		return Objects.equals(account, other.account) && Objects.equals(firstName, other.firstName)
+				&& Objects.equals(lastName, other.lastName);
 	}
 
 	@Override

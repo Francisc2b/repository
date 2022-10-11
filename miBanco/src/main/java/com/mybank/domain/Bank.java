@@ -9,7 +9,7 @@ public class Bank {
 	
 	
 	public Bank() {
-		customers = new Customer[3];
+		customers = new Customer[8];
 		numberOfCustomers = 0;
 		}
 	
@@ -36,10 +36,8 @@ public class Bank {
 	}
 	
 	public void addCustomer(String firstName, String lastName ) {
-		if (numberOfCustomers <= customers.length) {
-			customers[numberOfCustomers] = new Customer(firstName,lastName);
-			numberOfCustomers ++;
-		}
+		int i = numberOfCustomers++;
+		customers[i] = new Customer(firstName, lastName);
 	}
 	
 

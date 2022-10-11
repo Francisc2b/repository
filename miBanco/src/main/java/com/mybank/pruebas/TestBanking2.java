@@ -11,6 +11,7 @@ public class TestBanking2 {
 		
 		banco.getCustomers();
 		banco.addCustomer("Jose", "Pérez");
+		banco.addCustomer("Jose", "Pérez");
 		banco.addCustomer("Ana", "Garcia");
 		banco.addCustomer("Ana", "Garcia");
 		System.out.printf("El banco tiene:  %s clientes%n", banco.getNumberOfCustomerss());
