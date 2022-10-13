@@ -18,7 +18,7 @@ public class TestBanking4 {
 	    cliente = banco.getCustomer(0);
 	    System.out.println("Creating her Savings Account with a 500.00 balance and 3% interest.");
 	    cliente.setAccount(new SavingsAccount(500.00, 0.03));
-	    System.out.printf(cliente.getFirstName() + cliente.getAccount().getSaving().getInterestRate());
+	    //System.out.printf(cliente.getFirstName() + cliente.getAccount().getSaving().getInterestRate());
 	    
 	    
 	 
