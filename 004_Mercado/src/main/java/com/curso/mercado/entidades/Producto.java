@@ -8,6 +8,7 @@ public class Producto implements Serializable{
 	private Integer idProducto;
 	private String descripcion;
 	private double precio;
+	private int stock;
 	
 	public Producto() {
 		super();
@@ -18,6 +19,7 @@ public class Producto implements Serializable{
 		this.idProducto = idProducto;
 		this.descripcion = descripcion;
 		this.precio = precio;
+		this.stock = 5;
 	}
 
 	public Integer getIdProducto() {
@@ -43,6 +45,14 @@ public class Producto implements Serializable{
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
+	
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
 
 	@Override
 	public int hashCode() {
@@ -63,7 +73,8 @@ public class Producto implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Producto [idProducto=" + idProducto + ", descripcion=" + descripcion + ", precio=" + precio + "]";
+		return "Producto [idProducto=" + idProducto + ", descripcion=" + descripcion + ", precio=" + precio + ", stock="
+				+ stock + "]";
 	}
 	
 	
