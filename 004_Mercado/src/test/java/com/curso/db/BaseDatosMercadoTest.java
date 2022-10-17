@@ -2,6 +2,8 @@ package com.curso.db;
 
 import static org.junit.Assert.*;
 
+import java.util.Collection;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -35,5 +37,11 @@ public class BaseDatosMercadoTest {
 		
 		assertEquals(BaseDatosMercado.findByI(4).getDescripcion(), "camisa amarilla");
 	}
+	
+//	@Test
+//	public void getAllProductos() {
+//		Collection<Producto> lista = BaseDatosMercado.getAll();
+//		assertE
+//	}
 
 }

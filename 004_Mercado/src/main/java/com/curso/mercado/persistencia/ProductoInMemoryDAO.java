@@ -1,11 +1,12 @@
 package com.curso.mercado.persistencia;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.curso.db.BaseDatosMercado;
 import com.curso.mercado.entidades.Producto;
 
-public class ProductoDAO implements GenericDAO<Producto> {
+public class ProductoInMemoryDAO implements GenericDAO<Producto> {
 
 	@Override
 	public void add(Producto entidad) {
@@ -15,14 +16,12 @@ public class ProductoDAO implements GenericDAO<Producto> {
 
 	@Override
 	public List<Producto> getAll() {
-		// TODO crear y devolver una lista de productos
-		return null;
+		return new ArrayList<>(BaseDatosMercado.getAll());
 	}
 
 	@Override
 	public Producto getById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return BaseDatosMercado.findByI(id);
 	}
 
 }
