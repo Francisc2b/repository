@@ -23,16 +23,21 @@ public class ProductosService {
 	
 	
 	public void darAltaUnproducto(Producto p) {
-		// valida que p no es null
-		//validar descripcion 
-		//validar precio
-		
 		dao.add(p);
-		
 	}
 	
 	public List<Producto>  dameTodosLosProductos() {
 		return dao.getAll();
 	}
+	
+	public Producto getProducto(Integer id) {
+		return dao.getByID(id);
+	}
+	
+	public void quitarProducto(Integer id) {
+		dao.delete(id);
+	}
+	
+	
 
 }
