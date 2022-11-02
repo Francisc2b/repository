@@ -7,7 +7,9 @@
     <!--  por defecto es sigleton - uno para toda la aplicacion -->
     <bean id="saludador1" 
          class="com.curso.spring.ejemplo01.SaludoServiceImpl"
-         scope="singleton"></bean> 
+         scope="singleton"
+         lazy-init="true">
+         </bean> 
          
      <bean id="saludadorPrototipo" 
          class="com.curso.spring.ejemplo01.SaludoServiceImpl"
