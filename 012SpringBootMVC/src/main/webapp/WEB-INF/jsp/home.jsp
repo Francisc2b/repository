@@ -11,7 +11,8 @@
 </head>
 <body>
 
-<h2>Bienvendido ${nombre} </h2>
+<h2>Bienvendido ${usuario.nombre} </h2>
+rol: ${usuario.rol}
 
 </body>
 </html>

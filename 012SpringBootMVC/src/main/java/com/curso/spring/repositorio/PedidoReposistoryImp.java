@@ -43,12 +43,15 @@ public class PedidoReposistoryImp implements PedidoRepository {
 
 	@Override
 	public Collection<Pedido> getPedidoByUser(String user) {
+		log.info("user es " + user);
 		Collection<Pedido> lista = new ArrayList<>();
 		for (Pedido p:  pedidos.values()) {
 			if(p.getUser().equals(user)) {
 				lista.add(p);
 			}
 		}
+
+		log.info(lista.toString());
 		return lista;
 	}
 	
