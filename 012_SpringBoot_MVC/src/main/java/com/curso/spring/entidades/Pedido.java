@@ -4,43 +4,43 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.springframework.lang.NonNull;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "PEDIDOS")
-public class Pedido implements Serializable {
+@Table(name="PEDIDOS")
+//@NamedQueries({
+//	@NamedQuery(name="Pedido.findAll", 
+//			    query = "SELECT p FROM Pedido p"),
+//	@NamedQuery(name="Pedido.findbyIdUsuario", 
+//    query = "SELECT p FROM Pedido p WHERE p.user = :usuarioNombre")
+//	
+//})
+public class Pedido implements Serializable{
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PED_SEQ")
-	@SequenceGenerator(sequenceName = "PEDIDO_SEQ", name = "PED_SEQ", allocationSize = 1)
-	private Integer id;
+	 @Id
+	 @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PED_SEQ")
+	 @SequenceGenerator(sequenceName = "PEDIDO_SEQ", name = "PED_SEQ", allocationSize=1)	
+	 private Integer id;
+	 
+	 @Column(name="USUARIO")
+	 private String  user;
+	 
+	 @Column(name="DESCRIPCION")
+	 @NotNull
+	 private String desc;
+	 
+	 @Temporal(TemporalType.TIMESTAMP)
+	 @Column(name="FECHA_PEDIDO")
+	 private Date fechaPedido;
+	 
+	 
+	 @Column(name="ENTREGADO")
+	 private boolean entregado;
 
-	@Column(name = "USUARIO")
-	private String user;
+	 
+	 public Pedido() {}
 
-	@Column(name = "DESCRIPCION")
-	@NonNull
-	private String desc;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "FECHA_PEDIDO")
-	private Date fechaPedido;
-
-	@Column(name = "ENTREGADO")
-	private boolean entregado;
-
-	public Pedido() {
-	}
 
 	public Pedido(Integer id, String user, String desc, Date fechaPedido, boolean entregado) {
 		super();
@@ -51,50 +51,62 @@ public class Pedido implements Serializable {
 		this.entregado = entregado;
 	}
 
+
 	public Integer getId() {
 		return id;
 	}
+
 
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
+
 	public String getUser() {
 		return user;
 	}
+
 
 	public void setUser(String user) {
 		this.user = user;
 	}
 
+
 	public String getDesc() {
 		return desc;
 	}
+
 
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
 
+
 	public Date getFechaPedido() {
 		return fechaPedido;
 	}
+
 
 	public void setFechaPedido(Date fechaPedido) {
 		this.fechaPedido = fechaPedido;
 	}
 
+
 	public boolean isEntregado() {
 		return entregado;
 	}
+
 
 	public void setEntregado(boolean entregado) {
 		this.entregado = entregado;
 	}
 
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -108,10 +120,14 @@ public class Pedido implements Serializable {
 		return Objects.equals(id, other.id);
 	}
 
+
 	@Override
 	public String toString() {
 		return "Pedido [id=" + id + ", user=" + user + ", desc=" + desc + ", fechaPedido=" + fechaPedido
 				+ ", entregado=" + entregado + "]";
 	}
-
+	 
+	 
+	 
+	
 }

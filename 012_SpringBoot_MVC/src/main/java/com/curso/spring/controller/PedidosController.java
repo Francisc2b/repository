@@ -3,15 +3,11 @@ package com.curso.spring.controller;
 import java.util.Collection;
 import java.util.Optional;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -44,7 +40,8 @@ public class PedidosController {
 		
 		//pedir la lista de pedidos del usuario			
 		Collection<Pedido> lista = pedidoService.getPedidos(name);
-		model.addAttribute("listaPedidos", lista);			
+		model.addAttribute("listaPedidos", lista);
+				
 		
 		return "pedidos";
 	}
@@ -66,20 +63,6 @@ public class PedidosController {
 		Pedido p = pedidoService.getPedido(idPedido);
 		model.addAttribute("pedido", p);
 		return "detalle-pedido";
-	}
-	
-	@GetMapping("/crear")
-	public String crear(Pedido pedido) {
-		return "crear";
-	}
-	
-	@PostMapping("/crear")	
-	public String crear(@Valid Pedido pedido, BindingResult bindingResult) {
-		if(bindingResult.hasErrors()) {
-			return "crear";
-		}		
-		pedidoService.generarPedido(pedido);		
-		return "redirect:/pedidos";
 	}
 	
 	

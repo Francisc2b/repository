@@ -25,8 +25,5 @@
 
 </c:forEach>
 </ul>
-
-
-     <a href="/crear"> Añadir pedido</a>
 </body>
 </html>

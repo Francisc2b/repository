@@ -32,13 +32,7 @@ public class PedidoRepositoryImp implements PedidoRepository {
 	
 	@Override
 	public void add(Pedido pedido) {
-		//id++;
-		Integer id = 1;
-		if (this.pedidos.size()>0) {
-			id = this.pedidos.get(this.pedidos.size()-1).getId()+1;
-		}
-		pedido.setId(id);
-		((PedidoRepositoryImp) this.pedidos).add(pedido);
+		id++;
 		pedido.setId(id);
 		pedidos.put(id, pedido);
 		log.info("Has grabado un pedido en la base de datos");		
