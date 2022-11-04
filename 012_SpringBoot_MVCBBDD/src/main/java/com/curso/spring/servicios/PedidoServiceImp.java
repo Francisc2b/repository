@@ -70,5 +70,9 @@ public class PedidoServiceImp implements PedidosService {
 		
 		//return repo.getById(id);
 	}
+	
+	public void eliminarPedido(Integer id) {
+		repoJPA.deleteById(id);
+	}
 
 }
