@@ -1,6 +1,7 @@
 package com.curso.spring.servicios;
 
 import java.util.Collection;
+import java.util.Optional;
 
 import javax.annotation.PostConstruct;
 
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.curso.spring.entidades.Pedido;
 import com.curso.spring.repositorio.PedidoJPARepository;
@@ -40,12 +42,13 @@ public class PedidoServiceImp implements PedidosService {
 	}
 
 	@Override
-	public void generarPedido(Pedido p) {
+	public Pedido generarPedido(Pedido p) {
+		
+		//p.setFechaPedido(new java.util.Date()); 
+				//p.setEntregado(false);
+				log.info("gestiono un pedido");			
+		        return repoJPA.save(p);
 
-		log.info("gestiono un pedido");
-		//repo.add(p);
-		// inventariorepo.update(inventario)
-		repoJPA.saveAndFlush(p);
 	}
 	
 	@Override
@@ -64,11 +67,11 @@ public class PedidoServiceImp implements PedidosService {
 	}
 	
 	@Override
-	public Pedido getPedido(Integer id) {
+	public Pedido getPedido(Integer id) {		
+		return repoJPA.findById(id).orElse(null);
 		
-		return repoJPA.getReferenceById(id);
-		
-		//return repo.getById(id);
 	}
+	
+	
 
 }

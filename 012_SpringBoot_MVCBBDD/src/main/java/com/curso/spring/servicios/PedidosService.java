@@ -6,7 +6,7 @@ import com.curso.spring.entidades.Pedido;
 
 public interface PedidosService {
 	
-	void generarPedido(Pedido p);
+	Pedido generarPedido(Pedido p);
 	Collection<Pedido> getPedidos(String user);
 	Pedido getPedido(Integer id);
 
