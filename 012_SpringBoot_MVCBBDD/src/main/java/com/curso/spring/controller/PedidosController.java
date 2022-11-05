@@ -4,8 +4,10 @@ import java.util.Collection;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -86,8 +88,12 @@ public class PedidosController {
 	}
 	
 	
-	//@GetMapping("/pedido/delete/{idPedido}")
-	//public String borraPedido(@PathVariable)
+	@DeleteMapping("/pedidos/{id}")
+	public ResponseEntity<?> eliminarPedido(@PathVariable Integer id){
+		pedidoService.eliminarPedido(id);
+		return ResponseEntity.ok().build();
+	}
+	
 	
 	
 	

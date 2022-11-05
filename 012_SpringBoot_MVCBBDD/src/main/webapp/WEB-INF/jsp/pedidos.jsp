@@ -20,6 +20,7 @@
    <li>${pedido.id} - ${pedido.desc} -
    
      <a href="/pedido?idPedido=${pedido.id}"> Ver detalle</a>
+     <a href="/pedidos?idPedido=${pedido.id}"> Eliminar pedido</a>
     
     </li>
 

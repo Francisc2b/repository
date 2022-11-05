@@ -1,22 +1,16 @@
 package com.curso.spring.servicios;
 
 import java.util.Collection;
-import java.util.Optional;
 
 import javax.annotation.PostConstruct;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.curso.spring.entidades.Pedido;
 import com.curso.spring.repositorio.PedidoJPARepository;
-import com.curso.spring.repositorio.PedidoRepository;
 
 @Service
 //@Scope(value = "singleton")
@@ -71,7 +65,9 @@ public class PedidoServiceImp implements PedidosService {
 		return repoJPA.findById(id).orElse(null);
 		
 	}
-	
-	
+
+	public void eliminarPedido(Integer id) {
+		repoJPA.deleteById(id);
+	}
 
 }
