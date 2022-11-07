@@ -52,14 +52,12 @@ public class PedidosRestfulController {
 //		
 //	//DELETE
 //	
-//	//UPDATE
-//	@PutMapping("/ws/pedidos")
-//	public Pedido update(@RequestBody Pedido newPedido) {
-//		
-//		//Pedido  pConId = pedidoService.generarPedido(newPedido);
-//		
-//		return null;
-//	}
+	//UPDATE
+	@PutMapping("/ws/pedido/{id}")
+	public Pedido update(@RequestBody Pedido p) {
+		return pedidoService.actualizarPedido(p);
+	
+	}
 //	
 //	
 //	// GET BY ID

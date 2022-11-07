@@ -28,6 +28,7 @@ public interface PedidoJPARepository
 	List<Pedido> findByUser(String user);
 	List<Pedido> findByDesc(String desc);
 	List<Pedido> findByFechaPedido(Date fechaPedido);
+	Pedido updateByPedido(Pedido p);
 	
 	
 }

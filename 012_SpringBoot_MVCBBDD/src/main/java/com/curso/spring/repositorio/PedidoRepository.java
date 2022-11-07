@@ -11,5 +11,6 @@ public interface PedidoRepository {
 	Collection<Pedido> getPedidosByUser(String user);
 	Collection<Pedido> getAll();
 	Pedido getById(Integer id);
+	Pedido actualizarPorId(Integer id);
 
 }

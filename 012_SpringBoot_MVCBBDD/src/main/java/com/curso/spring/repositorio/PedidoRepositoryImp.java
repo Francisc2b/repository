@@ -60,5 +60,11 @@ public class PedidoRepositoryImp implements PedidoRepository {
 	public Pedido getById(Integer id) {		
 		return pedidos.get(id);
 	}
+
+	@Override
+	public Pedido actualizarPorId(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
